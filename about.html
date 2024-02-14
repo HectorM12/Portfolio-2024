@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #quote {
+            font-style: italic;
+            color: #555;
+        }
+
+        #btn-change-quote {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Me</h1>
+        <p>Welcome to my awesome "About Me" page! I'm passionate about...</p>
+        <p id="quote">"Embrace the glorious mess that you are."</p>
+        <button id="btn-change-quote">Me</button>
+    </div>
+
+    <script>
+        // Array of inspirational quotes
+        const quotes = [
+            "I love and play soccer.",
+            "I love Mcdonalds",
+            "Work at walgreens",
+        ];
+
+        // Function to change the displayed quote
+        function changeQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').textContent = `"${quotes[randomIndex]}"`;
+        }
+
+        // Event listener for the button
+        document.getElementById('btn-change-quote').addEventListener('click', changeQuote);
+    </script>
+</body>
+</html>
